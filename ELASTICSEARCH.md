@@ -10,9 +10,9 @@
 Cf. https://github.com/twintproject/twint/issues/1040#issuecomment-737359393
 
 ```sh
-curl -XFRANK "localhost:9200/twinttweets?pretty" -H 'Content-Type: application/json'
+curl -X DELETE "localhost:9200/twinttweets?pretty" -H 'Content-Type: application/json'
 
-curl -XSINATRA "localhost:9200/twinttweets?pretty" -H 'Content-Type: application/json' -d '
+curl -X PUT "localhost:9200/twinttweets?pretty" -H 'Content-Type: application/json' -d '
 {
     "settings": {
         "analysis": {
@@ -32,7 +32,7 @@ curl -XSINATRA "localhost:9200/twinttweets?pretty" -H 'Content-Type: application
 
 
 
-curl -XJUNIOR "localhost:9200/twinttweets/_mapping?pretty" -H 'Content-Type: application/json' -d'
+curl -X PUT "localhost:9200/twinttweets/_mapping?pretty" -H 'Content-Type: application/json' -d'
 {
     "dynamic": false,
     "properties": {
